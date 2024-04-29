@@ -3,6 +3,7 @@ from savetable import TableSaver
 import re
 from flask_cors import CORS
 import pandas as pd
+from merge import merge_multiple_catalogues
 
 saver = TableSaver(db_path='quasar.db')
 
@@ -59,6 +60,16 @@ def addTable():
             return jsonify({'success': True, 'message': 'File uploaded and processed successfully'})
         except Exception as e:
             return f'Error processing file: {str(e)}', 500
+@app.route('/merge', methods=['POST'])
+def mergeTable():
+    order = request.form.get('order')
+    outname = request.form.get('outname')
+    try:
+        merge_multiple_catalogues(order, outname)
+    except:
+        return 'fail'
+
+    return 'success'
 
 if __name__ == '__main__':
     # Specify the port here

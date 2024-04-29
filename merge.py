@@ -36,5 +36,5 @@ def merge_multiple_catalogues(catalogues, out_file):
             create = False
 
 
-merge_multiple_catalogues(['data/quaia23RADECName.csv', 'data/r90cat_radecid.csv', 'data/milliquas.csv', 'GDR2uW_RADECName.csv'], 'data/new_merge.csv')
+# merge_multiple_catalogues(['data/quaia23RADECName.csv', 'data/r90cat_radecid.csv', 'data/milliquas.csv', 'GDR2uW_RADECName.csv'], 'data/new_merge.csv')
 # merge_two_catalogues('data/merge.csv', 'data/r90cat_radecid.csv', 'data/merge.csv', create_out=True)
