@@ -1,4 +1,4 @@
-from flask import Flask,request, jsonify
+from flask import Flask,request, jsonify, send_file
 from savetable import TableSaver
 import re
 from flask_cors import CORS
@@ -66,10 +66,11 @@ def mergeTable():
     outname = request.form.get('outname')
     try:
         merge_multiple_catalogues(order, outname)
+        return send_file(outname, as_attachment=True)
     except:
         return 'fail'
 
-    return 'success'
+
 
 if __name__ == '__main__':
     # Specify the port here
