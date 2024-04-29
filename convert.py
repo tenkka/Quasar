@@ -1,8 +1,8 @@
 import pandas as pd
 
 # Input and output file paths
-input_file_path = 'milliquas.txt'
-output_file_path = 'milliquas.csv'
+input_file_path = 'data/milliquas.txt'
+output_file_path = 'data/milliquas.csv'
 
 # Define byte positions based on the provided format
 column_positions = [(0, 11), (12, 23), (25, 50), (51, 55), (56, 61), (62, 67), (68, 71),
